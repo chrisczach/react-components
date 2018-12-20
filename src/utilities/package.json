@@ -1,0 +1,20 @@
+{
+  "name": "@chrisczach/react-utilities",
+  "version": "0.1.0",
+  "description": "Utility Components for React",
+  "main": "index.js",
+    "dependencies": {
+      "react": "^16.7.0-alpha.2",
+      "styled-components": "^4.1.3"
+    },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@chrisczach",
+  "license": "ISC",
+  "homepage": "https://github.com/chrisczach/react-utilities",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrisczach/react-utilities"
+  }
+}
