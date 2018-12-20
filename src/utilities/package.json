@@ -1,6 +1,6 @@
 {
   "name": "@chrisczach/react-utilities",
-  "version": "0.1.0",
+  "version": "0.1.01",
   "description": "Utility Components for React",
   "main": "index.js",
     "dependencies": {
