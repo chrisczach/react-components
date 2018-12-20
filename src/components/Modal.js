@@ -7,7 +7,7 @@ export default class Modal extends Component {
   render() {
    const {shown, toggle, children} = this.props;
 
-    return <Portal>
+    return (<Portal>
       {shown &&
             <ModalWrapper>
             <button onClick={toggle}>Close</button>
@@ -15,7 +15,7 @@ export default class Modal extends Component {
           </ModalWrapper>
       }
 
-    </Portal>;
+    </Portal>);
   }
 }
 

@@ -5,7 +5,8 @@ import Modal from './components/Modal';
 class App extends Component {
   render() {
     return (
-<div>
+<>
+
 <Toggle >
 {  (shown, toggleShown) => {
     return(
@@ -33,7 +34,7 @@ class App extends Component {
 
 </Toggle>
 
-</div>
+</>
     )
     
   }
