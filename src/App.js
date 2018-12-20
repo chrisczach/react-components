@@ -1,42 +1,39 @@
 import React, { Component } from 'react';
-import Toggle from './components/Toggle';
-import Portal from './components/Portal';
-import Modal from './components/Modal';
+import Toggle from './utilities/Toggle';
+import Portal from './utilities/Portal';
+import Modal from './utilities/Modal';
+
+
 class App extends Component {
   render() {
     return (
-<>
+      <>
+        <Toggle>
+          {(shown, toggleShown) => {
+            return (
+              <div onClick={toggleShown}>
+                {shown ? 'Toggle On' : 'Toggle Off'}
+              </div>
+            );
+          }}
+        </Toggle>
 
-<Toggle >
-{  (shown, toggleShown) => {
-    return(
-      <div onClick={toggleShown}>
-      {shown ? 'Toggle On' : 'Toggle Off'}
-      </div>
-    )
-  }}
-</Toggle>
+        <Portal>Portal Adds Div in Body as sibling of root.</Portal>
 
-<Portal>
-  Portal Adds Div in Body as sibling of root.
-</Portal>
-
-<Toggle>
-  {(shown, toggle) => {
-    return(
-   
-        <Modal shown={shown} toggle={toggle}>
-        Testing
-     </Modal>)
-      
-
-    }}
-
-</Toggle>
-
-</>
-    )
-    
+        <Toggle>
+          {(shown, toggle) => {
+            return (
+              <>
+                <button onClick={toggle}>login</button>
+                <Modal toggle={toggle} shown={shown} >
+                <h1>Testing</h1>
+              </Modal>
+                </>
+            );
+          }}
+        </Toggle>
+      </>
+    );
   }
 }
 
