@@ -6,7 +6,7 @@ export const Card = styled.div`
   border-radius: 3px;
   ${elevation[4]}
   padding: 15px;
-${transition({})}
+${transition()}
 color: ${colors.black};
 
   &:hover{
