@@ -1,5 +1,5 @@
 import React, { Component, createContext } from 'react';
-import { Transition } from 'react-spring'
+import { Transition } from 'react-spring';
 
 import { Toggle, Portal } from 'utilities';
 import { Modal, Card } from 'elements';
@@ -12,16 +12,19 @@ class App extends Component {
       <UserProvider>
         <Toggle>
           {(shown, toggleShown) =>  (
-              < >
+              <div >
                 <button onClick={toggleShown}>Show/Hide</button>
+               
                 <Transition
   items={shown}
   from={{ opacity: 0, background: 'white' , height: '0px'}}
   enter={{ opacity: 1,  background: 'teal' ,height: '200px' }}
   leave={{ opacity: 0, background: 'white' ,height: '0px' }}>
+  
   {show =>  show && Header}
 </Transition>
-              </>
+
+              </div>
             )
         }
         </Toggle>
@@ -48,4 +51,4 @@ class App extends Component {
 
 export default App;
 
-const Header = style => (<Card style={style}><h1>Show Me</h1></Card>)
+const Header = style => (<Card style={style}><h1>Height: {style.height}</h1></Card>)

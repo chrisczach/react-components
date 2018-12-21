@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Transition } from 'react-spring';
+
 import {Portal, absolute} from 'utilities';
 import Icon from './Icon';
 import {Card} from './Cards';
@@ -8,15 +10,21 @@ export default function Modal(props) {
   const { shown, toggle, children } = props;
   return (
     <Portal>
-      {shown && (
-        <ModalWrapper>
+            <Transition
+  items={shown}
+  from={{ opacity: 0}}
+  enter={{ opacity: 1}}
+  leave={{ opacity: 0}}>
+      {shown=> styles => shown && (
+        <ModalWrapper style={{...styles}}>
           <Background onClick={toggle} />
-          <ModalCard>
+          <ModalCard >
             <CloseButton onClick={toggle}><Icon color={'blue'} name={'close'} /></CloseButton>
             <div>{children}</div>
           </ModalCard>
         </ModalWrapper>
       )}
+      </Transition>
     </Portal>
   );
 }
