@@ -1,10 +1,9 @@
 import React, { Component, createContext } from 'react';
 
 import { Toggle, Portal } from 'utilities';
-import { Modal} from 'elements';
-import User from './User';
-import UserProvider from './UserProvider';
-import UserContext from './UserContext';
+import { Modal } from 'elements';
+import User from './user/User';
+import UserProvider from './user/UserProvider';
 
 class App extends Component {
   render() {
@@ -13,17 +12,10 @@ class App extends Component {
         <Toggle>
           {(shown, toggleShown) => {
             return (
-
-
               <div onClick={toggleShown}>
-              {shown ? 'Toggle On' : 'Toggle Off'}
-            </div>
-
-
-
-
+                {shown ? 'Toggle On' : 'Toggle Off'}
+              </div>
             );
-
           }}
         </Toggle>
 
@@ -33,16 +25,12 @@ class App extends Component {
           {(shown, toggle) => {
             return (
               <>
-                 
-                  <button onClick={toggle}>login</button>
+                <button onClick={toggle}>login</button>
 
-
-                
-
-                <Modal toggle={toggle} shown={shown} >
-                <User />
-              </Modal>
-                </>
+                <Modal toggle={toggle} shown={shown}>
+                  <User />
+                </Modal>
+              </>
             );
           }}
         </Toggle>
