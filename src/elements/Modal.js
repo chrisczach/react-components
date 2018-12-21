@@ -11,16 +11,17 @@ export default function Modal(props) {
   return (
     <Portal>
             <Transition
-            //native
+            native
   items={shown}
-  from={{ opacity: 0, y: -50, cardScale: 'scale(0.5)', cardOpacity: .5}}
-  enter={{ opacity: .8, y:0, cardScale: 'scale(1)', cardOpacity: 1}}
-  leave={{ opacity: 0, y: -300, cardScale: 'scale(1), ', cardOpacity: 0}}>
+  from={{ opacity: 0, y: '-50%', cardScale: 'scale(0.5)', cardOpacity: .5}}
+  enter={{ opacity: .8, y:'0%', cardScale: 'scale(1)', cardOpacity: 1}}
+  leave={{ opacity: 0, y: '-300%', cardScale: 'scale(1), ', cardOpacity: 0}}>
       {shown=> styles => shown && (
         <ModalWrapper >
           <Background style={{opacity: styles.opacity}}onClick={toggle} />
           <ModalCard  style={{
-            transform: `translateY(${styles.y}%)`,
+            transform: styles.y.interpolate(y=> `translateY(${y})` )
+           ,
             opacity: styles.cardOpacity
             }}>
 

@@ -1,5 +1,5 @@
 import React, { Component, createContext } from 'react';
-import { Transition } from 'react-spring';
+import { Transition, animated, interpolate } from 'react-spring';
 
 import { Toggle, Portal } from 'utilities';
 import { Modal, Card } from 'elements';
@@ -16,6 +16,7 @@ class App extends Component {
                 <button onClick={toggleShown}>Show/Hide</button>
                
                 <Transition
+                native
   items={shown}
   from={{ opacity: 0, background: 'white' , height: '0px'}}
   enter={{ opacity: 1,  background: 'teal' ,height: '200px' }}
@@ -51,4 +52,7 @@ class App extends Component {
 
 export default App;
 
-const Header = style => (<Card style={style}><h1>Height: {style.height}</h1></Card>)
+
+const Header = style => (
+<Card style={style}><h1>Height: {style.height}</h1></Card>
+)
