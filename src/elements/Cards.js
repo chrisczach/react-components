@@ -6,6 +6,8 @@ export const Card = styled.div`
   border-radius: 3px;
   ${elevation[4]}
   padding: 15px;
+  max-width:300px;
+  margin: 0 auto;
 ${transition({property: 'box-shadow'})}
 color: ${colors.black};
 
